@@ -23,13 +23,28 @@
     - age
   Each employee has the following methods:
     - makeWidget
-      - This returns a string equal to the employees first name + last name + the word Widget
+      - This returns a string equal to the employees first name 
+      + last name + the word Widget
       - Example: "Dave Smith Widget"
 
   Call your class Employee and receive all the data in the constructor in the order listed above.
 */
 
-//Code Here
+class Employee {
+constructor (first_name, last_name, email, age){
+this.first_name = first_name;
+this.last_name = last_name;
+this.email = email;
+this.age = age;
+
+  }
+  makeWidget(){
+    return  `${first_name} ${last_name} Widget`
+ 
+}
+}
+
+//const britt = new Employee('Brittney', 'Elsberry', 'brittelsberry@gmail.com', 31)
 
 
 ////////// PROBLEM 2 //////////
@@ -47,7 +62,25 @@
   Call your new class Manager
 */
 
-//Code Here
+class Manager extends Employee  {
+constructor(first_name, last_name, email, age){
+this.reports = [];
+}
+super (first_name, last_name, email, age){
+ 
+}
+hire(employee){
+  reports.push(employee)
+
+}
+fire(employee){
+reports.splice(employee, 1)
+
+}
+
+}
+
+
 
 
 ////////// PROBLEM 3 //////////
