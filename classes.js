@@ -36,15 +36,19 @@ this.first_name = first_name;
 this.last_name = last_name;
 this.email = email;
 this.age = age;
+//this.makeWidget = makeWidget;
 
-  }
-  makeWidget(){
-    return  `${first_name} ${last_name} Widget`
- 
+}
+
+makeWidget(){
+  return `${this.first_name} ${this.last_name} Widget`
+
 }
 }
 
-//const britt = new Employee('Brittney', 'Elsberry', 'brittelsberry@gmail.com', 31)
+
+  
+const test = new Employee('Brittney', 'Elsberry', 'brittelsberry@gmail.com', 31)
 
 
 ////////// PROBLEM 2 //////////
@@ -64,21 +68,24 @@ this.age = age;
 
 class Manager extends Employee  {
 constructor(first_name, last_name, email, age){
+
+super (first_name, last_name, email, age)
 this.reports = [];
+
 }
-super (first_name, last_name, email, age){
- 
-}
+
 hire(employee){
-  reports.push(employee)
+  this.reports.push(employee)
 
 }
-fire(employee){
-reports.splice(employee, 1)
+fire(index){
+this.reports.splice(index, 1)
 
 }
 
 }
+
+const britt = new Manager('Brittney', 'Elsberry', 'brittelsberry@gmail.com', 31);
 
 
 
@@ -87,7 +94,8 @@ reports.splice(employee, 1)
 
 /*
   Managers for Widget Co. get promoted when they get more employees, and get a bonus when they fire employees.
-  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties as a manager with the following additional properties:
+  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties 
+  as a manager with the following additional properties:
     - title - default 'Not a manager'
     - bonus - default 0
 
@@ -104,7 +112,20 @@ reports.splice(employee, 1)
   Call your new class ProgressiveManager
 */
 
-//Code Here
+// class ProgressiveManager extends Manager {
+// constructor(first_name, last_name, email, age){
+// super (first_name, last_name, email, age, hire, fire)  
+// this.title = 'Not a Manager';
+// this.bonus = 0;
+
+
+// } hire(){
+
+// } fire(){
+
+// }
+
+// }
 
 
 
@@ -131,6 +152,31 @@ reports.splice(employee, 1)
         - The anonymous function should decrease wear_and_tear_count by 10, and set needs_reboot to false
 */
 
-//Code Here
+class Machine {
+  constructor(){
+  this.widgets_made_count = 0;
+  this.wear_and_tear_count = 0;
+  this.needs_reboot = false;
+  }
+  makeWidgets(num){
+  this.widgets_made_count = This.widgets_made_count + num;
+  //this.wear_and_tear_count = ;
+
+  }
+    fixMachine(){
+    this.needs_reboot = true;
+
+  } 
+  reboot(){
+  return function(){
+   this.wear_and_tear_count = this.wear_and_tear_count -10;
+   this.needs_reboot = false; 
+  }  
+  
+
+  }
+ 
+
+}
 
 
