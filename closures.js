@@ -91,22 +91,15 @@ const count = makeCounter();
   http://stackoverflow.com/questions/17776940/javascript-module-pattern-with-example?answertab=votes#tab-top
 */
 
-function counterFactory() {
-//let value = 0;
+function counterFactory(value) {
 
-  inc = function(){
-    //value = value + 1;
-  }
-  dec = function(){
-    //value = value - 1
-  }
   
     return {
-      inc: function(value){
+      inc: ()=>{
         value = value + 1;
         return value;
       },  
-      dec: function(value){
+      dec: ()=>{
         value= value-1;
         return value;
       }
@@ -225,7 +218,8 @@ function secretNumber() {
 */
 
 function timeOutCounter() {
-  for (var i = 0; i <= 5; i++) {
+  for (let i = 0; i <= 5; i++) {
+
 
     setTimeout(function() {
       console.log(i);
@@ -233,7 +227,9 @@ function timeOutCounter() {
   } return setTimeout
 }
 
+
 const test = timeOutCounter();
+console.log(timeOutCounter);
 
 
 // const logCount1 = timeOutCounter();
