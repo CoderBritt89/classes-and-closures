@@ -91,32 +91,38 @@ const count = makeCounter();
   http://stackoverflow.com/questions/17776940/javascript-module-pattern-with-example?answertab=votes#tab-top
 */
 
-// function counterFactory(value) {
+function counterFactory() {
+let value = 0;
+
+  inc = function(){
+    //value = value + 1;
+  }
+  dec = function(){
+    //value = value - 1
+  }
   
+    return {
+      inc: function(value){
+        value = value + 1;
+      },  
+      dec: function(value){
+        value= value-1;
+      }
+      
+      
 
-//  }
-//   return {
-//     inc: function(){
-//      value = value + 1
-//      return value
-//     },
-
-//     dec: function(){
-//       value = value - 1
-//       return value
-//     }
-    
-
-//   };
+    } 
+  
+  }
 
 
-//counter = counterFactory(10);
-// counter.inc() // 11
-// counter.inc() // 12
-// counter.inc() // 13
-// counter.dec() // 12
+const counter = counterFactory(10);
+counter.inc() // 11
+counter.inc() // 12
+counter.inc() // 13
+counter.dec() // 12
 
-
+console.log(counter);
 
 ////////// PROBLEM 5 //////////
 
