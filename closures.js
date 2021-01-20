@@ -92,7 +92,7 @@ const count = makeCounter();
 */
 
 function counterFactory() {
-let value = 0;
+//let value = 0;
 
   inc = function(){
     //value = value + 1;
@@ -104,9 +104,11 @@ let value = 0;
     return {
       inc: function(value){
         value = value + 1;
+        return value;
       },  
       dec: function(value){
         value= value-1;
+        return value;
       }
       
       

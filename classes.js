@@ -112,22 +112,42 @@ const britt = new Manager('Brittney', 'Elsberry', 'brittelsberry@gmail.com', 31)
   Call your new class ProgressiveManager
 */
 
-// class ProgressiveManager extends Manager {
-// constructor(first_name, last_name, email, age){
-// super (first_name, last_name, email, age, hire, fire)  
-// this.title = 'Not a Manager';
-// this.bonus = 0;
+class ProgressiveManager extends Manager {
+constructor(first_name, last_name, email, age, hire, fire){
+super (first_name, last_name, email, age, hire, fire)  
+this.title = 'Not a Manager';
+this.bonus = 0; }
 
+hire(){
+if(this.reports === 0 ){
+  return this.title = 'Not a Manager'
+}
+else if (this.reports > 0 && this.reports <4 ){
 
-// } hire(){
+  return this.title = 'Barely Manager'
+  
+} else if (this.reports > 3 && this.reports < 11 ){
+  return this.title = 'Mostly Manager'
+  
+} else if (this.reports> 10 && this.reports < 51 ){
+  return this.title = 'Manager'
+  
+} else if (this.reports > 50 && this.reports < 101 ){
+  return this.title = 'Manager Plus'
+} else if (this.reports > 100){
+  return this.title = 'Bestest Manager'
 
-// } fire(){
+}}
 
-// }
+fire(){
+  this.bonus + 100;
 
-// }
+}
 
+}
 
+const justin = new ProgressiveManager('Justin', 'Hunter', 'j@outlook.com', 36, 10, 23);
+//console.log(justin.bonus);
 
 ////////// PROBLEM 4 - Black Diamond //////////
 
